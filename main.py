@@ -10,7 +10,7 @@ st.title("📚 Uploader de Matérias para GitHub")
 
 # GitHub config
 github_token = st.sidebar.text_input("Token do GitHub", type="password")
-repo_name = "80anna/nathguima_temp"
+repo_name = "80anna/natguima_temp"
 file_in_repo = st.sidebar.text_input("Caminho do arquivo JSON no repo", value="materias.json")
 commit_message = st.sidebar.text_input("Mensagem de commit", value="Atualização do arquivo materias.json")
 
@@ -32,8 +32,7 @@ if uploaded_file is not None:
         json_data = df.to_dict(orient='records')
         json_str = json.dumps(json_data, indent=2, ensure_ascii=False)
 
-        st.subheader("📄 Pré-visualização do JSON")
-        st.code(json_str, language="json")
+        st.subheader("📄 Arquivo upado!")
 
         if github_token and repo_name:
             if st.button("🚀 Enviar para o GitHub"):
