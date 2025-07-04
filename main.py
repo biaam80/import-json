@@ -9,9 +9,8 @@ st.set_page_config(page_title="Uploader de Matérias", layout="centered")
 st.title("📚 Uploader de Matérias para GitHub")
 
 # GitHub config
-st.sidebar.header("🔐 Configuração do GitHub")
-github_token = st.secrets["github_token"]
-repo_name = st.sidebar.text_input("Nome do repositório (ex: usuario/repositorio)")
+github_token = st.sidebar.text_input("Token do GitHub", type="password")
+repo_name = "80anna/nathguima_temp"
 file_in_repo = st.sidebar.text_input("Caminho do arquivo JSON no repo", value="materias.json")
 commit_message = st.sidebar.text_input("Mensagem de commit", value="Atualização do arquivo materias.json")
 
